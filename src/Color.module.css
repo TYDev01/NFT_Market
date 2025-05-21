@@ -1,0 +1,66 @@
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
+
+
+.adFont {
+  position: relative;
+  display: inline-block;
+  font-family: "Russo One", sans-serif;
+  font-size: 7rem;
+  line-height: 7rem;
+  color: transparent;
+  background: linear-gradient(to right, #d5f70a, #facc15);
+  -webkit-background-clip: text;
+  background-clip: text;
+  z-index: 1;
+}
+
+.adFont::before {
+  content: attr(data-text);
+  position: absolute;
+  -webkit-text-stroke: 6px #fff; /* Border thickness */
+  text-stroke: 6px #fff;
+  z-index: -1;
+  left: 0;
+  color: transparent;
+}
+
+/* Animated image container */
+.imgContainer {
+  position: relative;
+}
+
+.imgSize {
+  width: 482px;
+  height: 482px;
+  padding: 1rem;
+  border-radius: 58px 0;
+  position: relative;
+  background: #000000;
+  border: 1px solid #d5f70a;
+  object-fit: cover; /* Ensures images fill the container */
+  transition: opacity 0.5s ease-in-out; /* Smooth transition between images */
+}
+
+/* Animated border */
+.imgSize::before {
+  content: '';
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  border-radius: 20px;
+  background: linear-gradient(
+    45deg,
+    #d5f70a, #facc15, #eab308, #facc15, #d5f70a
+  );
+  background-size: 300% 300%;
+  z-index: -1;
+  animation: movingBorder 3s linear infinite;
+}
+
+@keyframes movingBorder {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
