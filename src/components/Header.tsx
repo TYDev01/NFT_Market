@@ -1,6 +1,7 @@
 import React from 'react';
 import logo from '../assets/logo.png';
 import { Link } from 'react-router-dom';
+import { ConnectButton } from './ConnectButton';
 
 const Header: React.FC = () => {
   return (
@@ -30,16 +31,7 @@ const Header: React.FC = () => {
             </Link>
         </div>
         <div>
-            <button 
-              className='pr-8 font-extrabold font-5xl bg-[#d5f70a] px-6 py-4 rounded-full cursor-pointer hover:bg-[#a4ca66] transition-colors duration-200 
-              shadow-md hover:shadow-lg
-              transform hover:scale-105
-              active:scale-95
-              focus:outline-none focus:ring-2 focus:ring-[#d5f70a] focus:ring-opacity-50'
-              onClick={() => console.log('Connect wallet clicked')}
-            >
-              Connect wallet
-            </button>
+            <ConnectButton />
         </div>
       </div>
     </div>
